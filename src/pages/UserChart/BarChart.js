@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import UserChart from "../../components/UserChart";
 
+//constant
+import { barchart } from "../../constants/charts";
+
 //services
 import { getBarChart } from "../../services/chartService";
 
 function BarChart() {
-  const [data, setData] = useState([]);
-  const [label, setLabel] = useState([]);
+  const [data, setData] = useState(barchart.data);
+  const [label, setLabel] = useState(barchart.label);
   const title = "# of People";
   const backgroundColor = [
     "rgba(255, 99, 132)",

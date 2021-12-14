@@ -12,7 +12,16 @@ function UserChart(props) {
     let ctx = document.getElementById(id).getContext("2d");
     if (myChart) {
       myChart.reset();
-      myChart.data.datasets = data;
+      myChart.data = {
+        labels: label,
+        datasets: [
+          {
+            label: title,
+            data: data,
+            backgroundColor: color,
+          },
+        ],
+      };
       myChart.update();
       setMyChart(myChart);
     } else {

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import UserChart from "../../components/UserChart";
 
+//constant
+import { piechart } from "../../constants/charts";
+
 //services
 import { getPieChart } from "../../services/chartService";
 
 function PieChart() {
-  const [data, setData] = useState([]);
-  const [label, setLabel] = useState([]);
+  const [data, setData] = useState(piechart.data);
+  const [label, setLabel] = useState(piechart.label);
   const backgroundColor = ["rgba(54, 162, 235)", "rgba(255, 99, 132)"];
 
   useEffect(() => {
